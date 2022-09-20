@@ -16,7 +16,34 @@ console.log(rudePerson2("I love dogs")); // prints "I yo love yo dogs"
 
 ***********************************************************************/
 
-// your code here!
+// let interrupter = interruptingWord => {
+//   return function (sentence) {
+//     words = sentence.split('')
+//     for (let i = 0; i < words; i++) //loop through indexs in sentence //expection i to go to 11
+//       console.log(words[i])
+//   }
+// }
+let interrupter = interruptingWord => {
+  return function (sentence) {
+      words = sentence.split(' ')
+      newSentence = ""
+      for (let i = 0; i < words.length - 1; i++) {//loop through indexs in sentence //expection i to go to 11
+        newSentence += words[i] + " " + interruptingWord + " "
+      }
+      newSentence += words[words.length -1]
+      return newSentence
+  }
+}
+// // console.log(interrupter([1,2,3]))
+// // Look below to see how this function is invoked:
+// let rudePerson = interrupter("what"); // => returns a function
+// console.log(rudePerson("how are you")); // prints "how what are what you"
+// console.log(rudePerson("I like pie")); // prints "I what like what pie"
+
+
+// // Invoking the interrupter function again: 
+// let rudePerson2 = interrupter("yo"); // => returns a function
+// console.log(rudePerson2("I love dogs")); // prints "I yo love yo dogs"
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 

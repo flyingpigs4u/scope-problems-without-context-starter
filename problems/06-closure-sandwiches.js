@@ -17,8 +17,22 @@ sandwich2("pb") // => "One sandwich with tomato and pb"
 
 ***********************************************************************/
 
-// your code here!
+let sandwichMaker = () => {
+  let order = "One sandwich with tomato"
+  return function (extraItem)  {
+    order = order.concat(" and ", extraItem)
+    return order
+  }
+}
 
+// let sandwich = sandwichMaker(); // => returns a function
+// console.log(sandwich("spinach")) // => "One sandwich with tomato and spinach"
+// console.log(sandwich("jelly")) // => "One sandwich with tomato and spinach and jelly"
+// console.log(sandwich("bread")) // => "One sandwich with tomato and spinach and jelly and bread"
+
+// let sandwich2 = sandwichMaker(); // => returns a function
+// console.log(sandwichMaker()('hello'))
+// console.log(sandwich2("pb")) // => "One sandwich with tomato and pb"
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
