@@ -22,29 +22,45 @@ console.log(smoothie2("pineapple"));
 // prints "I'm having a smoothie with apples and bananas and berries and pineapple"
 ***********************************************************************/
 
+// smoothieMachine = ((...firstBatch) => {
+//   // firstBatchBeg = firstBatch.slice(0, -1);
+//   // firstBatchLast = firstBatch.slice(-1)
+//   sentence = "I'm having a smoothie with "
+
+//   for (i in firstBatch) {
+//     sentence += firstBatch[i] + " and "
+//   }
+//   // sentence += firstBatchLast
+
+//   return function additionalItems (...lastBatch) {
+//     console.log(lastBatch.slice(0, -1))
+//     lastBatchBeg = lastBatch.slice(0, -1);
+//     // console.log("Beg" + lastBatchBeg)
+//     // lastBatchLast = lastBatch.slice(-1)
+//     // console.log("Last" + lastBatchLast)
+
+//     for (i in lastBatchBeg) {
+//       sentence += " and " + lastBatchBeg[i] + " and "
+//     }    
+//     // sentence += lastBatchLast
+//     return sentence
+//   }
+// });
+
 smoothieMachine = ((...firstBatch) => {
-  // firstBatchBeg = firstBatch.slice(0, -1);
-  // firstBatchLast = firstBatch.slice(-1)
+  allItems = firstBatch
   sentence = "I'm having a smoothie with "
 
-  for (i in firstBatch) {
-    sentence += firstBatch[i] + " and "
-  }
-  // sentence += firstBatchLast
-
-  return function additionalItems (...lastBatch) {
-    lastBatchBeg = lastBatch.slice(0, -1);
-    lastBatchLast = lastBatch.slice(-1)
-    for (i in lastBatchBeg) {
-      sentence += " and " + lastBatchBeg[i] + " and "
-    }    
-    sentence += lastBatchLast
-    return sentence
+  return function additionalItems (...anotherBatch) {
+    allItems.push(...anotherBatch)
+    return sentence + allItems.join(' and ')
+    // return allItems
   }
 });
 
+
 let smoothie1 = smoothieMachine();
-console.log(smoothie1("`milk`"));
+console.log(smoothie1("milk"));
 // prints "I'm having a smoothie with milk"
 console.log(smoothie1("kale", "spinach"));
 // prints "I'm having a smoothie with milk and kale and spinach"
