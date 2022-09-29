@@ -18,8 +18,19 @@ multiplyByFive(5); // returns 25
 
 ***********************************************************************/
 
-// your code here!
+dynamicMultiply = num => {
+  return function newFunction (initialValue) {
+    return initialValue * num
+  }
+}
+// const doubler = dynamicMultiply(2); // returns a functions
+// console.log(doubler(5)); // returns 10
 
+// const tripler = dynamicMultiply(3);
+// console.log(tripler(5)); // returns 15
+
+// const multiplyByFive = dynamicMultiply(5);
+// console.log(multiplyByFive(5)); // returns 25
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
