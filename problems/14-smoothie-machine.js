@@ -22,54 +22,30 @@ console.log(smoothie2("pineapple"));
 // prints "I'm having a smoothie with apples and bananas and berries and pineapple"
 ***********************************************************************/
 
-// smoothieMachine = ((...firstBatch) => {
-//   // firstBatchBeg = firstBatch.slice(0, -1);
-//   // firstBatchLast = firstBatch.slice(-1)
-//   sentence = "I'm having a smoothie with "
-
-//   for (i in firstBatch) {
-//     sentence += firstBatch[i] + " and "
-//   }
-//   // sentence += firstBatchLast
-
-//   return function additionalItems (...lastBatch) {
-//     console.log(lastBatch.slice(0, -1))
-//     lastBatchBeg = lastBatch.slice(0, -1);
-//     // console.log("Beg" + lastBatchBeg)
-//     // lastBatchLast = lastBatch.slice(-1)
-//     // console.log("Last" + lastBatchLast)
-
-//     for (i in lastBatchBeg) {
-//       sentence += " and " + lastBatchBeg[i] + " and "
-//     }    
-//     // sentence += lastBatchLast
-//     return sentence
-//   }
-// });
-
 smoothieMachine = ((...firstBatch) => {
-  allItems = firstBatch
+  let allItems = firstBatch
   sentence = "I'm having a smoothie with "
 
   return function additionalItems (...anotherBatch) {
     allItems.push(...anotherBatch)
     return sentence + allItems.join(' and ')
-    // return allItems
   }
 });
 
+// let smoothie1 = smoothieMachine();
+// let test1 = smoothie1("milk");
+// console.log(test1)
+// let smoothie1 = smoothieMachine();
+// console.log(smoothie1("milk"));
+// // prints "I'm having a smoothie with milk"
+// console.log(smoothie1("kale", "spinach"));
+// // prints "I'm having a smoothie with milk and kale and spinach"
+// console.log(smoothie1("honey", "pears", "berries"));
+// // prints "I'm having a smoothie with milk and kale and spinach and honey and pears and berries"
 
-let smoothie1 = smoothieMachine();
-console.log(smoothie1("milk"));
-// prints "I'm having a smoothie with milk"
-console.log(smoothie1("kale", "spinach"));
-// prints "I'm having a smoothie with milk and kale and spinach"
-console.log(smoothie1("honey", "pears", "berries"));
-// prints "I'm having a smoothie with milk and kale and spinach and honey and pears and berries"
-
-let smoothie2 = smoothieMachine("apples", "bananas", "berries");
-console.log(smoothie2("pineapple"));
-// prints "I'm having a smoothie with apples and bananas and berries and pineapple"
+// let smoothie2 = smoothieMachine("apples", "bananas", "berries");
+// console.log(smoothie2("pineapple"));
+// // prints "I'm having a smoothie with apples and bananas and berries and pineapple"
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
