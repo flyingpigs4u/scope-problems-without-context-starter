@@ -21,14 +21,23 @@ plannedIntersect = firstArr => {
     result = []
     // loop through first array , per item
     for (i = 0; i < firstArr.length; i++) {
-      for (i = 0; i < secondArr.length; i++) {
-        console.log
+      for (y = 0; y < secondArr.length; y++) {
+        if (firstArr[i] == secondArr[y]) {
+          result.push(firstArr[i])
+        }
       }
     }
+    return result
     // loop through second array and find when they are same
     // return new array
   }
 }
+
+// let abc = plannedIntersect(["a", "b", "c"]); // returns a function
+// console.log(abc(["b", "d", "c"])); // returns [ 'b', 'c' ]
+
+// let fame = plannedIntersect(["f", "a", "m", "e"]); // returns a function
+// console.log(fame(["a", "f", "z", "b"])); // returns [ 'f', 'a' ]
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
 
