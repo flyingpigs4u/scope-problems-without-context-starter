@@ -15,8 +15,17 @@ console.log(twentyPercent([10, 20, 30])); // [ 8, 16, 24 ]
 
 ***********************************************************************/
 
-// your code here!
+coupon = discount => {
+  return function discounted (pricesArray) {
+    let newPrices = pricesArray.map(x=> x - x * discount)
+    return newPrices
+  }
+}
+// let tenPercent = coupon(0.1);
+// console.log(tenPercent([10, 20, 30])); // [ 9, 18, 27 ]
 
+// let twentyPercent = coupon(0.2);
+// console.log(twentyPercent([10, 20, 30])); // [ 8, 16, 24 ]
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {

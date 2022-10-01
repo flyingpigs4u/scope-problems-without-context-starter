@@ -12,7 +12,19 @@ let result3 = arrowReverseString("potato"); // returns "otatop"
 
 ***********************************************************************/
 
-// your code here!
+arrowReverseString = str => {
+// create new string 
+newString = ""
+// loop through inital string from end to front
+for (let i = 1; i < str.length; i++) {
+  newString += str[str.length - i]
+}
+newString += str[0]
+return newString
+}
+// let result1 = arrowReverseString("hello"); // returns "olleh"
+// let result2 = arrowReverseString("garden"); // returns "nedrag"
+// let result3 = arrowReverseString("potato"); // returns "otatop"
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 

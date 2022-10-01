@@ -15,7 +15,20 @@ console.log(fame(["a", "f", "z", "b"])); // returns [ 'f', 'a' ]
 
 *******************************************************************************/
 
-// your code here
+plannedIntersect = firstArr => {
+  return function returnedIntersect (secondArr) {
+    // create new array
+    result = []
+    // loop through first array , per item
+    for (i = 0; i < firstArr.length; i++) {
+      for (i = 0; i < secondArr.length; i++) {
+        console.log
+      }
+    }
+    // loop through second array and find when they are same
+    // return new array
+  }
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
 
