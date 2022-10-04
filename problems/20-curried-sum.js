@@ -27,8 +27,7 @@ actually does the required work of summing.
 
 Example:
 // 1
-const sum = curriedSum(4); // returns a function
-sum(5) // returns a function
+twoCoins
 sum(20) // returns a function
 sum(30) // returns a function
 sum(20); // => returns 75
@@ -42,7 +41,18 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
   be useful
 ***********************************************************************/
 
-// your code here
+curriedSum = numArgs => {
+  let numbersArray = []
+  return function _curriedSum (number) {
+    numbersArray.push(number)
+    if (numbersArray.length == numArgs) {
+      sum = numbersArray.reduce(add, 0)
+      return sum
+    }
+  }
+}
+
+
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
