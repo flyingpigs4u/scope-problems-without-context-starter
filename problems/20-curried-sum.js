@@ -42,8 +42,26 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
   be useful
 ***********************************************************************/
 
-// your code here
+curriedSum = numArgs => {
+  let numbersArray = []
+  return function _curriedSum (number) {
+    numbersArray.push(number)
+    if (numbersArray.length == numArgs) {
+      let sum = numbersArray.reduce((partialSum, a) => partialSum + a , 0)
+      return sum
+    }
+  return _curriedSum
+  }
+}
 
+// const sum = curriedSum(4); // returns a function
+// console.log(sum(5)) // returns a function)
+// console.log(sum(20)) // returns a function
+// console.log(sum(30)) // returns a function
+// console.log(sum(20)); // => returns 75
+
+// const sum = curriedSum(3)(2)(1)(7); // => returns 10
+// console.log(sum)
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
